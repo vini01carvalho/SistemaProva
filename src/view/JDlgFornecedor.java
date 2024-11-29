@@ -4,6 +4,8 @@
  */
 package view;
 
+import tools.Util;
+
 /**
  *
  * @author user
@@ -15,7 +17,10 @@ public class JDlgFornecedor extends javax.swing.JDialog {
      */
     public JDlgFornecedor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        setTitle("Cadastro Usuario");
+        setLocationRelativeTo(null);
         initComponents();
+        Util.habilitar(false,jTxtCodigo,jTxtEmail,jTxtEndereco,jTxtNomeEmpresa,jTxtTelefone,jChbTelefone,jChbEmail,jBtnConfirmar,jBtnCancelar);
     }
 
     /**
@@ -188,101 +193,41 @@ public class JDlgFornecedor extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
-        habilitar(true);
-        limpar();
+        Util.habilitar(true,jTxtCodigo,jTxtEmail,jTxtEndereco,jTxtNomeEmpresa,jTxtTelefone,jChbTelefone,jChbEmail,jBtnConfirmar,jBtnCancelar);
+        Util.habilitar(false, jBtnAlterar,jBtnIncluir,jBtnExcluir,jBtnPesquisar);
+        Util.limpar(jTxtCodigo,jTxtEmail,jTxtEndereco,jTxtNomeEmpresa,jTxtTelefone,jChbTelefone,jChbEmail,jBtnConfirmar,jBtnCancelar);
         jTxtCodigo.grabFocus();
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
-        JOptionPane.showMessageDialog(null, "Alterado com sucesso...");
-        habilitar(true);
+        
+        Util.habilitar(true,jTxtCodigo,jTxtEmail,jTxtEndereco,jTxtNomeEmpresa,jTxtTelefone,jChbTelefone,jChbEmail,jBtnConfirmar,jBtnCancelar);
+        Util.habilitar(false, jBtnAlterar,jBtnIncluir,jBtnExcluir,jBtnPesquisar);
+        Util.limpar(jTxtCodigo,jTxtEmail,jTxtEndereco,jTxtNomeEmpresa,jTxtTelefone,jChbTelefone,jChbEmail,jBtnConfirmar,jBtnCancelar);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
-        JOptionPane.showMessageDialog(null, "Exclusão");
-        int resp = JOptionPane.showConfirmDialog(null, "Confirma Exclusão", "Deletar Registro", JOptionPane.YES_NO_OPTION);
-        if (resp == JOptionPane.YES_OPTION){
-            JOptionPane.showMessageDialog(null, "Exclusão Ok!");
-            FMJ_fornecedor fornecedor = new FMJ_fornecedor();
-            int cod = Integer.valueOf(jTxtCodigo.getText() );
-            fornecedor.setFMJ_IdFornecedor(cod);
-            fornecedor.setFMJ_nomeEmpresa(jTxtNomeEmpresa.getText());
-            fornecedor.setFMJ_enderecoEmpresa(jTxtEndereco.getText());
-            fornecedor.setFMJ_telefoneEmpresa(jTxtTelefone.getText());
-            fornecedor.setFMJ_emailEmpresa(jTxtEmail.getText());
-            if (jChbEmail.isSelected() == true) {
-                fornecedor.setFMJ_contatoEmpresa("Email");
-            } else {
-                fornecedor.setFMJ_contatoEmpresa("");
-            }if (jChbTelefone.isSelected() == true) {
-                fornecedor.setFMJ_contatoEmpresa("Telefone");
-            } else {
-                fornecedor.setFMJ_contatoEmpresa("");
-            }
-
-            FornecedorDao fornecedorDAO = new FornecedorDao();
-            fornecedorDAO.delete(fornecedor);
+        
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
-        FMJ_fornecedor fornecedor = new FMJ_fornecedor();
-        int cod = Integer.valueOf(jTxtCodigo.getText() );
-        fornecedor.setFMJ_IdFornecedor(cod);
-        fornecedor.setFMJ_nomeEmpresa(jTxtNomeEmpresa.getText());
-        fornecedor.setFMJ_enderecoEmpresa(jTxtEndereco.getText());
-        fornecedor.setFMJ_telefoneEmpresa(jTxtTelefone.getText());
-        fornecedor.setFMJ_emailEmpresa(jTxtEmail.getText());
-        if (jChbEmail.isSelected() == true) {
-            fornecedor.setFMJ_contatoEmpresa("Email");
-        } else {
-            fornecedor.setFMJ_contatoEmpresa("");
-        }if (jChbTelefone.isSelected() == true) {
-            fornecedor.setFMJ_contatoEmpresa("Telefone");
-        } else {
-            fornecedor.setFMJ_contatoEmpresa("");
-        }
-
-        FornecedorDao fornecedorDAO = new FornecedorDao();
-        fornecedorDAO.insert(fornecedor);
-        habilitar(true);
-        limpar();
-
-        JOptionPane.showMessageDialog(null, "Salvo!");
+       
+        Util.habilitar(false,jTxtCodigo,jTxtEmail,jTxtEndereco,jTxtNomeEmpresa,jTxtTelefone,jChbTelefone,jChbEmail,jBtnConfirmar,jBtnCancelar);
+        Util.habilitar(true, jBtnAlterar,jBtnIncluir,jBtnExcluir,jBtnPesquisar);
+        Util.limpar(jTxtCodigo,jTxtEmail,jTxtEndereco,jTxtNomeEmpresa,jTxtTelefone,jChbTelefone,jChbEmail,jBtnConfirmar,jBtnCancelar);
+       
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
-        habilitar(false);
+      
+        Util.habilitar(false,jTxtCodigo,jTxtEmail,jTxtEndereco,jTxtNomeEmpresa,jTxtTelefone,jChbTelefone,jChbEmail,jBtnConfirmar,jBtnCancelar);
+        Util.habilitar(true, jBtnAlterar,jBtnIncluir,jBtnExcluir,jBtnPesquisar);
+        Util.limpar(jTxtCodigo,jTxtEmail,jTxtEndereco,jTxtNomeEmpresa,jTxtTelefone,jChbTelefone,jChbEmail,jBtnConfirmar,jBtnCancelar);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
-        String resp = JOptionPane.showInputDialog(null, "Entre com o Código de Usuário");
-        if (resp == null ){
-            JOptionPane.showMessageDialog(null, "codigo em branco");
-        } else {
-            FornecedorDao fornecedorDAO = new FornecedorDao();
-            int cod = Integer.valueOf(resp);
-            FMJ_fornecedor fornecedor = (FMJ_fornecedor) fornecedorDAO.list(cod);
-
-            resp = String.valueOf(fornecedor.getFMJ_IdFornecedor());
-            jTxtCodigo.setText(resp);
-            jTxtNomeEmpresa.setText(fornecedor.getFMJ_nomeEmpresa());
-            jTxtEndereco.setText(fornecedor.getFMJ_enderecoEmpresa());
-            jTxtTelefone.setText(fornecedor.getFMJ_telefoneEmpresa());
-            jTxtEmail.setText(fornecedor.getFMJ_emailEmpresa());
-            if (fornecedor.getFMJ_contatoEmpresa().equals("Email") == true) {
-                jChbEmail.setSelected(true);
-            } else {
-                jChbEmail.setSelected(false);
-                if (fornecedor.getFMJ_contatoEmpresa().equals("Telefone") == true) {
-                    jChbTelefone.setSelected(true);
-                } else {
-                    jChbTelefone.setSelected(false);
-
-                }
-
-            }
-        }
-
+        JDlgFornecedorPesq jDlgFornecedorPesq = new JDlgFornecedorPesq(null, true);
+        jDlgFornecedorPesq.setVisible(true);
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     /**

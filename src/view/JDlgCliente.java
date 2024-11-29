@@ -3,6 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package view;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.text.DefaultFormatterFactory;
+import javax.swing.text.MaskFormatter;
+import tools.Util;
 
 /**
  *
@@ -12,10 +19,39 @@ public class JDlgCliente extends javax.swing.JDialog {
 
     /**
      * Creates new form JDlgCliente
+     * @param parent
+     * @param modal
      */
     public JDlgCliente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+    }  private MaskFormatter mascaraCpf;
+    private MaskFormatter mascaraData;
+
+    /**
+     * /**
+     * Creates new form JDlgFuncionario
+     */
+    public JDlgCliente(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
+        setTitle("Cadastro CLiente");
+        setLocationRelativeTo(null);
+        initComponents();
+
+        Util.habilitar( false,jTxtCodigo, jTxtNome, jTxtEmail, jTxtTelefone, jTxtEndereco,jTxtGenero,jTxtSobrenome ,jLblNome, jLblCodigo, jLblDataNasc, jLblEmail, jLblDataNasc,jLblEndereco,jLblGenero,jLblGeneroFavoritos,jLblSobrenome,jLblTelefone, jLblPrefComunicacao,jFmtRg,jFmtDataNascimento,jChbEcchi,jChbEmail,jChbJosei,jChbKodomo,jChbSeinen,jChbShojo,jChbShonen,jChbTelefone,jBtnConfirmar, jBtnCancelar);
+           
+        try {
+            mascaraCpf = new MaskFormatter("###.###.###-##");
+        } catch (ParseException ex) {
+            Logger.getLogger(JDlgCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//    jFmtCpf.setFormatterFactory(new DefaultFormatterFactory(mascaraCpf));
+        try {
+            mascaraData = new MaskFormatter("##/##/####");
+        } catch (ParseException ex) {
+            Logger.getLogger(JDlgCliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+//    jFmtDataNasc.setFormatterFactory(new DefaultFormatterFactory(mascaraData));
     }
 
     /**
@@ -308,192 +344,33 @@ public class JDlgCliente extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
-        JOptionPane.showMessageDialog(null, "Exclusão");
-        int resp = JOptionPane.showConfirmDialog(null, "Confirma Exclusão", "Deletar Registro", JOptionPane.YES_NO_OPTION);
-        if (resp == JOptionPane.YES_OPTION){
-            VSC_cliente cliente = new VSC_cliente();
-            int cod = Integer.valueOf(jTxtCodigo.getText() );
-            cliente.setVSC_id_cliente(cod);
-            cliente.setVSC_nome(jTxtNome.getText());
-            cliente.setVSC_sobrenome(jTxtSobrenome.getText());
-            cliente.setVSC_endereco(jTxtEndereco.getText());
-            cliente.setVSC_numTelefone(jTxtTelefone.getText());
-            cliente.setVSC_dataNasc(null);
-            cliente.setVSC_genero(jTxtGenero.getText());
-            cliente.setVSC_Rg(jFmtRg.getText());
-            if (jChbShonen.isSelected() == true) {
-                cliente.setVSC_generosFavoritos("Shonen");
-            } else {
-                cliente.setVSC_generosFavoritos("");
-            }
-            if (jChbKodomo.isSelected() == true) {
-                cliente.setVSC_generosFavoritos("Kodomo");
-            } else {
-                cliente.setVSC_generosFavoritos("");
-            }
-
-            if (jChbShojo.isSelected() == true) {
-                cliente.setVSC_generosFavoritos("Shojo");
-            } else {
-                cliente.setVSC_generosFavoritos("");
-            }
-            if (jChbEcchi.isSelected() == true) {
-                cliente.setVSC_generosFavoritos("Ecchi");
-            } else {
-                cliente.setVSC_generosFavoritos("");
-            }
-            if (jChbJosei.isSelected() == true) {
-                cliente.setVSC_generosFavoritos("Josei");
-            } else {
-                cliente.setVSC_generosFavoritos("");
-            }
-            if (jChbSeinen.isSelected() == true) {
-                cliente.setVSC_generosFavoritos("Seinen");
-            } else {
-                cliente.setVSC_generosFavoritos("");
-            }
-            if (jChbEmail.isSelected() == true) {
-                cliente.setVSC_preferencia_de_comunicacao("E");
-            } else {
-                cliente.setVSC_preferencia_de_comunicacao("");
-            }
-            if (jChbTelefone.isSelected() == true) {
-                cliente.setVSC_preferencia_de_comunicacao("T");
-            } else {
-                cliente.setVSC_preferencia_de_comunicacao("");
-            }
-            ClienteDao clienteDAO = new ClienteDao();
-            clienteDAO.delete(cliente);
-            JOptionPane.showMessageDialog(null, "Exclusão Ok!");
-            habilitar(false);
+       // JOptionPane.showMessageDialog(null, "Exclusão");
+        
+         //   JOptionPane.showMessageDialog(null, "Exclusão Ok!");
+            
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
-        VSC_cliente cliente = new VSC_cliente();
-        int cod = Integer.valueOf(jTxtCodigo.getText());
-        cliente.setVSC_id_cliente(cod);
-        cliente.setVSC_nome(jTxtNome.getText());
-        cliente.setVSC_sobrenome(jTxtSobrenome.getText());
-        cliente.setVSC_endereco(jTxtEndereco.getText());
-        cliente.setVSC_numTelefone(jTxtTelefone.getText());
-        cliente.setVSC_dataNasc(null);
-        cliente.setVSC_genero(jTxtGenero.getText());
-        cliente.setVSC_Rg(jFmtRg.getText());
-        cliente.setVSC_enderecoEmail(jTxtEmail.getText());
-        if (jChbShonen.isSelected() == true) {
-            cliente.setVSC_generosFavoritos("Shonen");
-        } else {
-            cliente.setVSC_generosFavoritos("");
-        }
-        if (jChbKodomo.isSelected() == true) {
-            cliente.setVSC_generosFavoritos("Kodomo");
-        } else {
-            cliente.setVSC_generosFavoritos("");
-        }
-
-        if (jChbShojo.isSelected() == true) {
-            cliente.setVSC_generosFavoritos("Shojo");
-        } else {
-            cliente.setVSC_generosFavoritos("");
-        }
-        if (jChbEcchi.isSelected() == true) {
-            cliente.setVSC_generosFavoritos("Ecchi");
-        } else {
-            cliente.setVSC_generosFavoritos("");
-        }
-        if (jChbJosei.isSelected() == true) {
-            cliente.setVSC_generosFavoritos("Josei");
-        } else {
-            cliente.setVSC_generosFavoritos("");
-        }
-        if (jChbSeinen.isSelected() == true) {
-            cliente.setVSC_generosFavoritos("Seinen");
-        } else {
-            cliente.setVSC_generosFavoritos("");
-        }
-
-        if (jChbEmail.isSelected() == true) {
-            cliente.setVSC_preferencia_de_comunicacao("E");
-        } else {
-            cliente.setVSC_preferencia_de_comunicacao("");
-        }
-        if (jChbTelefone.isSelected() == true) {
-            cliente.setVSC_preferencia_de_comunicacao("T");
-        } else {
-            cliente.setVSC_preferencia_de_comunicacao("");
-        }
-        ClienteDao clienteDAO = new ClienteDao();
-        clienteDAO.insert(cliente);
-
-        JOptionPane.showMessageDialog(null, "Salvo!");
+        Util.habilitar(false,jTxtCodigo, jTxtNome, jTxtEmail, jTxtTelefone, jTxtEndereco,jTxtGenero,jTxtSobrenome ,jLblNome, jLblCodigo, jLblDataNasc, jLblEmail, jLblDataNasc,jLblEndereco,jLblGenero,jLblGeneroFavoritos,jLblSobrenome,jLblTelefone, jLblPrefComunicacao,jFmtRg,jFmtDataNascimento,jChbEcchi,jChbEmail,jChbJosei,jChbKodomo,jChbSeinen,jChbShojo,jChbShonen,jChbTelefone,jBtnConfirmar, jBtnCancelar);
+            Util.habilitar(true,jBtnAlterar,jBtnIncluir,jBtnExcluir,jBtnPesquisar);
+            Util.limpar(jTxtCodigo, jTxtNome, jTxtEmail, jTxtTelefone, jTxtEndereco,jTxtGenero,jTxtSobrenome ,jFmtRg,jFmtDataNascimento,jChbEcchi,jChbEmail,jChbJosei,jChbKodomo,jChbSeinen,jChbShojo,jChbShojo,jChbShonen,jChbTelefone);
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
-        habilitar(false);
+        Util.habilitar(false,jTxtCodigo, jTxtNome, jTxtEmail, jTxtTelefone, jTxtEndereco,jTxtGenero,jTxtSobrenome ,jLblNome, jLblCodigo, jLblDataNasc, jLblEmail, jLblDataNasc,jLblEndereco,jLblGenero,jLblGeneroFavoritos,jLblSobrenome,jLblTelefone, jLblPrefComunicacao,jFmtRg,jFmtDataNascimento,jChbEcchi,jChbEmail,jChbJosei,jChbKodomo,jChbSeinen,jChbShojo,jChbShonen,jChbTelefone,jBtnConfirmar, jBtnCancelar);
+            Util.habilitar(true,jBtnAlterar,jBtnIncluir,jBtnExcluir,jBtnPesquisar);
+            Util.limpar(jTxtCodigo, jTxtNome, jTxtEmail, jTxtTelefone, jTxtEndereco,jTxtGenero,jTxtSobrenome ,jFmtRg,jFmtDataNascimento,jChbEcchi,jChbEmail,jChbJosei,jChbKodomo,jChbSeinen,jChbShojo,jChbShojo,jChbShonen,jChbTelefone);
     }//GEN-LAST:event_jBtnCancelarActionPerformed
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
-        String resp = JOptionPane.showInputDialog(null, "Entre com o Código de Usuário");
-        if (resp == null ){
-            JOptionPane.showMessageDialog(null, "codigo em branco");
-        } else {
-            ClienteDao clienteDAO = new ClienteDao();
-            int cod = Integer.valueOf(resp);
-            VSC_cliente cliente = (VSC_cliente) clienteDAO.list(cod);
-
-            resp = String.valueOf(cliente.getVSC_id_cliente());
-            jTxtCodigo.setText(resp);
-            jTxtNome.setText(cliente.getVSC_nome());
-            jTxtSobrenome.setText(cliente.getVSC_sobrenome());
-            jTxtEndereco.setText(cliente.getVSC_endereco());
-            jTxtEmail.setText(cliente.getVSC_enderecoEmail());
-            jTxtTelefone.setText(cliente.getVSC_numTelefone());
-            // jFmtDataNascimento.setText(clientes.getVSC_dataNasc());
-            jTxtGenero.setText(cliente.getVSC_genero());
-            jFmtRg.setText(cliente.getVSC_Rg());
-            if (cliente.getVSC_generosFavoritos().equals("Shonen") == true) {
-                jChbShonen.setSelected(true);
-            } else {
-                jChbShonen.setSelected(false);
-            }
-            if (cliente.getVSC_generosFavoritos().equals("Kodomo") == true) {
-                jChbKodomo.setSelected(true);
-            } else {
-                jChbKodomo.setSelected(false);
-            }
-
-            if (cliente.getVSC_generosFavoritos().equals("Shojo") == true) {
-                jChbShojo.setSelected(true);
-            } else {
-                jChbShojo.setSelected(false);
-            }
-            if (cliente.getVSC_generosFavoritos().equals("Ecchi") == true) {
-                jChbEcchi.setSelected(true);
-            } else {
-                jChbEcchi.setSelected(false);
-            }
-            if (cliente.getVSC_generosFavoritos().equals("Josei") == true) {
-                jChbJosei.setSelected(true);
-            } else {
-                jChbJosei.setSelected(false);
-            }
-            if (cliente.getVSC_generosFavoritos().equals("Seinen") == true) {
-                jChbSeinen.setSelected(true);
-            } else {
-                jChbSeinen.setSelected(false);
-            }
-            if (cliente.getVSC_preferencia_de_comunicacao().equals("Email") == true) {
-                jChbEmail.setSelected(true);
-            } else {
-                jChbEmail.setSelected(false);
-            }
-            if (cliente.getVSC_preferencia_de_comunicacao().equals("Telefone") == true) {
-                jChbEmail.setSelected(true);
-            } else {
-                jChbEmail.setSelected(false);
-            }
-
-        }
+      //  String resp = JOptionPane.showInputDialog(null, "Entre com o Código de Usuário");
+      //  if (resp == null ){
+       //     JOptionPane.showMessageDialog(null, "codigo em branco");
+       // } else {
+       //    JOptionPane.showMessageDialog(null, "trabalhando nisso");
+       // }
+        JDlgClientePesq jDlgClientePesq = new JDlgClientePesq(null, true);
+        jDlgClientePesq.setVisible(true);
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
     private void jTxtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtCodigoActionPerformed
@@ -509,21 +386,23 @@ public class JDlgCliente extends javax.swing.JDialog {
     }//GEN-LAST:event_jTxtEmailActionPerformed
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
-        habilitar(true);
-        jTxtCodigo.grabFocus();
-        limpar();
+       Util.habilitar(true,jTxtCodigo, jTxtNome, jTxtEmail, jTxtTelefone, jTxtEndereco,jTxtGenero,jTxtSobrenome ,jLblNome, jLblCodigo, jLblDataNasc, jLblEmail, jLblDataNasc,jLblEndereco,jLblGenero,jLblGeneroFavoritos,jLblSobrenome,jLblTelefone, jLblPrefComunicacao,jFmtRg,jFmtDataNascimento,jChbEcchi,jChbEmail,jChbJosei,jChbKodomo,jChbSeinen,jChbShojo,jChbShonen,jChbTelefone,jBtnConfirmar, jBtnCancelar);
+            Util.habilitar(false,jBtnAlterar,jBtnIncluir,jBtnExcluir,jBtnPesquisar);
+            Util.limpar(jTxtCodigo, jTxtNome, jTxtEmail, jTxtTelefone, jTxtEndereco,jTxtGenero,jTxtSobrenome ,jFmtRg,jFmtDataNascimento,jChbEcchi,jChbEmail,jChbJosei,jChbKodomo,jChbSeinen,jChbShojo,jChbShojo,jChbShonen,jChbTelefone);
 
     }//GEN-LAST:event_jBtnIncluirActionPerformed
 
     private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
-        JOptionPane.showMessageDialog(null, "Alterado com sucesso...");
+        Util.habilitar(true,jTxtCodigo, jTxtNome, jTxtEmail, jTxtTelefone, jTxtEndereco,jTxtGenero,jTxtSobrenome ,jLblNome, jLblCodigo, jLblDataNasc, jLblEmail, jLblDataNasc,jLblEndereco,jLblGenero,jLblGeneroFavoritos,jLblSobrenome,jLblTelefone, jLblPrefComunicacao,jFmtRg,jFmtDataNascimento,jChbEcchi,jChbEmail,jChbJosei,jChbKodomo,jChbSeinen,jChbShojo,jChbShonen,jChbTelefone,jBtnConfirmar, jBtnCancelar);
+            Util.habilitar(false,jBtnAlterar,jBtnIncluir,jBtnExcluir,jBtnPesquisar);
+            Util.limpar(jTxtCodigo, jTxtNome, jTxtEmail, jTxtTelefone, jTxtEndereco,jTxtGenero,jTxtSobrenome ,jFmtRg,jFmtDataNascimento,jChbEcchi,jChbEmail,jChbJosei,jChbKodomo,jChbSeinen,jChbShojo,jChbShojo,jChbShonen,jChbTelefone);
     }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+  //  public static void main(String args[]) {
+   //     /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -547,19 +426,19 @@ public class JDlgCliente extends javax.swing.JDialog {
         //</editor-fold>
 
         /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                JDlgCliente dialog = new JDlgCliente(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+   //     java.awt.EventQueue.invokeLater(new Runnable() {
+    //        public void run() {
+      //          JDlgCliente dialog = new JDlgCliente(new javax.swing.JFrame(), true);
+              //  dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                //    @Override
+               //     public void windowClosing(java.awt.event.WindowEvent e) {
+               //         System.exit(0);
+              //      }
+            //    });
+           //     dialog.setVisible(true);
+          //  }
+       // });
+  //  }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnAlterar;
