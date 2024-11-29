@@ -20,18 +20,25 @@ public class JDlgCliente extends javax.swing.JDialog {
     /**
      * Creates new form JDlgCliente
      * @param parent
+     * @param parent
      * @param modal
      */
-    public JDlgCliente(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        initComponents();
-    }  private MaskFormatter mascaraCpf;
-    private MaskFormatter mascaraData;
+        
+     
+    /**
+     * /**
+     * Creates new form JDlgFuncionario
+     */
+    
+      
+
 
     /**
      * /**
      * Creates new form JDlgFuncionario
      */
+    
+  
     public JDlgCliente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         setTitle("Cadastro CLiente");
@@ -40,17 +47,9 @@ public class JDlgCliente extends javax.swing.JDialog {
 
         Util.habilitar( false,jTxtCodigo, jTxtNome, jTxtEmail, jTxtTelefone, jTxtEndereco,jTxtGenero,jTxtSobrenome ,jLblNome, jLblCodigo, jLblDataNasc, jLblEmail, jLblDataNasc,jLblEndereco,jLblGenero,jLblGeneroFavoritos,jLblSobrenome,jLblTelefone, jLblPrefComunicacao,jFmtRg,jFmtDataNascimento,jChbEcchi,jChbEmail,jChbJosei,jChbKodomo,jChbSeinen,jChbShojo,jChbShonen,jChbTelefone,jBtnConfirmar, jBtnCancelar);
            
-        try {
-            mascaraCpf = new MaskFormatter("###.###.###-##");
-        } catch (ParseException ex) {
-            Logger.getLogger(JDlgCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
 //    jFmtCpf.setFormatterFactory(new DefaultFormatterFactory(mascaraCpf));
-        try {
-            mascaraData = new MaskFormatter("##/##/####");
-        } catch (ParseException ex) {
-            Logger.getLogger(JDlgCliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+     
 //    jFmtDataNasc.setFormatterFactory(new DefaultFormatterFactory(mascaraData));
     }
 
@@ -407,22 +406,7 @@ public class JDlgCliente extends javax.swing.JDialog {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JDlgCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JDlgCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JDlgCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JDlgCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+
         //</editor-fold>
 
         /* Create and display the dialog */
