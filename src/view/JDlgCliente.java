@@ -27,21 +27,497 @@ public class JDlgCliente extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jBtnExcluir = new javax.swing.JButton();
+        jBtnConfirmar = new javax.swing.JButton();
+        jLblCodigo = new javax.swing.JLabel();
+        jLblNome = new javax.swing.JLabel();
+        jBtnCancelar = new javax.swing.JButton();
+        jBtnPesquisar = new javax.swing.JButton();
+        jLblSobrenome = new javax.swing.JLabel();
+        jFmtDataNascimento = new javax.swing.JFormattedTextField();
+        jLblEndereco = new javax.swing.JLabel();
+        jFmtRg = new javax.swing.JFormattedTextField();
+        jLblTelefone = new javax.swing.JLabel();
+        jChbEmail = new javax.swing.JCheckBox();
+        jLblEmail = new javax.swing.JLabel();
+        jChbTelefone = new javax.swing.JCheckBox();
+        jLblDataNasc = new javax.swing.JLabel();
+        jChbShonen = new javax.swing.JCheckBox();
+        jLblGenero = new javax.swing.JLabel();
+        jChbKodomo = new javax.swing.JCheckBox();
+        jLblRg = new javax.swing.JLabel();
+        jChbShojo = new javax.swing.JCheckBox();
+        jLblGeneroFavoritos = new javax.swing.JLabel();
+        jChbEcchi = new javax.swing.JCheckBox();
+        jLblPrefComunicacao = new javax.swing.JLabel();
+        jTxtCodigo = new javax.swing.JTextField();
+        jChbJosei = new javax.swing.JCheckBox();
+        jChbSeinen = new javax.swing.JCheckBox();
+        jTxtNome = new javax.swing.JTextField();
+        jTxtSobrenome = new javax.swing.JTextField();
+        jTxtEndereco = new javax.swing.JTextField();
+        jTxtTelefone = new javax.swing.JTextField();
+        jTxtEmail = new javax.swing.JTextField();
+        jTxtGenero = new javax.swing.JTextField();
+        jBtnIncluir = new javax.swing.JButton();
+        jBtnAlterar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jBtnExcluir.setText("Excluir");
+        jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnExcluirActionPerformed(evt);
+            }
+        });
+
+        jBtnConfirmar.setText("Confirmar");
+        jBtnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnConfirmarActionPerformed(evt);
+            }
+        });
+
+        jLblCodigo.setText("Codigo");
+
+        jLblNome.setText("Nome");
+
+        jBtnCancelar.setText("Cancelar");
+        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCancelarActionPerformed(evt);
+            }
+        });
+
+        jBtnPesquisar.setText("Pesquisar");
+        jBtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnPesquisarActionPerformed(evt);
+            }
+        });
+
+        jLblSobrenome.setText("Sobrenome");
+
+        jLblEndereco.setText("Endereço");
+
+        jLblTelefone.setText("Telefone");
+
+        jChbEmail.setText("Email");
+
+        jLblEmail.setText("Email");
+
+        jChbTelefone.setText("Telefone");
+
+        jLblDataNasc.setText("Data Nascimento");
+
+        jChbShonen.setText("Shonen");
+
+        jLblGenero.setText("Genero");
+
+        jChbKodomo.setText("Kodomo");
+
+        jLblRg.setText("Rg");
+
+        jChbShojo.setText("Shojo");
+
+        jLblGeneroFavoritos.setText("Generos Favoritos");
+
+        jChbEcchi.setText("Ecchi");
+
+        jLblPrefComunicacao.setText("Pref Comunicação");
+
+        jTxtCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtCodigoActionPerformed(evt);
+            }
+        });
+
+        jChbJosei.setText("Josei");
+
+        jChbSeinen.setText("Seinen");
+
+        jTxtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtNomeActionPerformed(evt);
+            }
+        });
+
+        jTxtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxtEmailActionPerformed(evt);
+            }
+        });
+
+        jBtnIncluir.setText("Incluir");
+        jBtnIncluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnIncluirActionPerformed(evt);
+            }
+        });
+
+        jBtnAlterar.setText("Alterar");
+        jBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnAlterarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTxtEndereco)
+                    .addComponent(jTxtTelefone)
+                    .addComponent(jTxtCodigo)
+                    .addComponent(jTxtNome)
+                    .addComponent(jTxtSobrenome)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLblCodigo)
+                            .addComponent(jLblNome)
+                            .addComponent(jLblSobrenome)
+                            .addComponent(jLblEndereco)
+                            .addComponent(jLblTelefone))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTxtGenero)
+                            .addComponent(jTxtEmail)
+                            .addComponent(jFmtDataNascimento)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLblEmail)
+                                    .addComponent(jLblGenero)
+                                    .addComponent(jLblDataNasc)
+                                    .addComponent(jLblRg)
+                                    .addComponent(jLblPrefComunicacao))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jFmtRg))
+                        .addGap(79, 79, 79))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jChbEmail)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jChbTelefone)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLblGeneroFavoritos))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jBtnIncluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtnAlterar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtnExcluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtnConfirmar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtnCancelar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBtnPesquisar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jChbShonen)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jChbKodomo))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jChbEcchi)
+                                .addGap(18, 18, 18)
+                                .addComponent(jChbJosei)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jChbSeinen)
+                            .addComponent(jChbShojo))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLblEmail)
+                    .addComponent(jLblCodigo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLblNome)
+                    .addComponent(jLblDataNasc))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFmtDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLblSobrenome)
+                    .addComponent(jLblGenero))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTxtSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTxtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLblEndereco)
+                    .addComponent(jLblRg))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTxtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFmtRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLblTelefone)
+                    .addComponent(jLblPrefComunicacao))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jChbEmail)
+                    .addComponent(jChbTelefone))
+                .addGap(18, 18, 18)
+                .addComponent(jLblGeneroFavoritos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jChbShonen)
+                    .addComponent(jChbKodomo)
+                    .addComponent(jChbShojo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jChbEcchi)
+                    .addComponent(jChbJosei)
+                    .addComponent(jChbSeinen))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnIncluir)
+                    .addComponent(jBtnAlterar)
+                    .addComponent(jBtnExcluir)
+                    .addComponent(jBtnConfirmar)
+                    .addComponent(jBtnCancelar)
+                    .addComponent(jBtnPesquisar))
+                .addGap(37, 37, 37))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
+        JOptionPane.showMessageDialog(null, "Exclusão");
+        int resp = JOptionPane.showConfirmDialog(null, "Confirma Exclusão", "Deletar Registro", JOptionPane.YES_NO_OPTION);
+        if (resp == JOptionPane.YES_OPTION){
+            VSC_cliente cliente = new VSC_cliente();
+            int cod = Integer.valueOf(jTxtCodigo.getText() );
+            cliente.setVSC_id_cliente(cod);
+            cliente.setVSC_nome(jTxtNome.getText());
+            cliente.setVSC_sobrenome(jTxtSobrenome.getText());
+            cliente.setVSC_endereco(jTxtEndereco.getText());
+            cliente.setVSC_numTelefone(jTxtTelefone.getText());
+            cliente.setVSC_dataNasc(null);
+            cliente.setVSC_genero(jTxtGenero.getText());
+            cliente.setVSC_Rg(jFmtRg.getText());
+            if (jChbShonen.isSelected() == true) {
+                cliente.setVSC_generosFavoritos("Shonen");
+            } else {
+                cliente.setVSC_generosFavoritos("");
+            }
+            if (jChbKodomo.isSelected() == true) {
+                cliente.setVSC_generosFavoritos("Kodomo");
+            } else {
+                cliente.setVSC_generosFavoritos("");
+            }
+
+            if (jChbShojo.isSelected() == true) {
+                cliente.setVSC_generosFavoritos("Shojo");
+            } else {
+                cliente.setVSC_generosFavoritos("");
+            }
+            if (jChbEcchi.isSelected() == true) {
+                cliente.setVSC_generosFavoritos("Ecchi");
+            } else {
+                cliente.setVSC_generosFavoritos("");
+            }
+            if (jChbJosei.isSelected() == true) {
+                cliente.setVSC_generosFavoritos("Josei");
+            } else {
+                cliente.setVSC_generosFavoritos("");
+            }
+            if (jChbSeinen.isSelected() == true) {
+                cliente.setVSC_generosFavoritos("Seinen");
+            } else {
+                cliente.setVSC_generosFavoritos("");
+            }
+            if (jChbEmail.isSelected() == true) {
+                cliente.setVSC_preferencia_de_comunicacao("E");
+            } else {
+                cliente.setVSC_preferencia_de_comunicacao("");
+            }
+            if (jChbTelefone.isSelected() == true) {
+                cliente.setVSC_preferencia_de_comunicacao("T");
+            } else {
+                cliente.setVSC_preferencia_de_comunicacao("");
+            }
+            ClienteDao clienteDAO = new ClienteDao();
+            clienteDAO.delete(cliente);
+            JOptionPane.showMessageDialog(null, "Exclusão Ok!");
+            habilitar(false);
+    }//GEN-LAST:event_jBtnExcluirActionPerformed
+
+    private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
+        VSC_cliente cliente = new VSC_cliente();
+        int cod = Integer.valueOf(jTxtCodigo.getText());
+        cliente.setVSC_id_cliente(cod);
+        cliente.setVSC_nome(jTxtNome.getText());
+        cliente.setVSC_sobrenome(jTxtSobrenome.getText());
+        cliente.setVSC_endereco(jTxtEndereco.getText());
+        cliente.setVSC_numTelefone(jTxtTelefone.getText());
+        cliente.setVSC_dataNasc(null);
+        cliente.setVSC_genero(jTxtGenero.getText());
+        cliente.setVSC_Rg(jFmtRg.getText());
+        cliente.setVSC_enderecoEmail(jTxtEmail.getText());
+        if (jChbShonen.isSelected() == true) {
+            cliente.setVSC_generosFavoritos("Shonen");
+        } else {
+            cliente.setVSC_generosFavoritos("");
+        }
+        if (jChbKodomo.isSelected() == true) {
+            cliente.setVSC_generosFavoritos("Kodomo");
+        } else {
+            cliente.setVSC_generosFavoritos("");
+        }
+
+        if (jChbShojo.isSelected() == true) {
+            cliente.setVSC_generosFavoritos("Shojo");
+        } else {
+            cliente.setVSC_generosFavoritos("");
+        }
+        if (jChbEcchi.isSelected() == true) {
+            cliente.setVSC_generosFavoritos("Ecchi");
+        } else {
+            cliente.setVSC_generosFavoritos("");
+        }
+        if (jChbJosei.isSelected() == true) {
+            cliente.setVSC_generosFavoritos("Josei");
+        } else {
+            cliente.setVSC_generosFavoritos("");
+        }
+        if (jChbSeinen.isSelected() == true) {
+            cliente.setVSC_generosFavoritos("Seinen");
+        } else {
+            cliente.setVSC_generosFavoritos("");
+        }
+
+        if (jChbEmail.isSelected() == true) {
+            cliente.setVSC_preferencia_de_comunicacao("E");
+        } else {
+            cliente.setVSC_preferencia_de_comunicacao("");
+        }
+        if (jChbTelefone.isSelected() == true) {
+            cliente.setVSC_preferencia_de_comunicacao("T");
+        } else {
+            cliente.setVSC_preferencia_de_comunicacao("");
+        }
+        ClienteDao clienteDAO = new ClienteDao();
+        clienteDAO.insert(cliente);
+
+        JOptionPane.showMessageDialog(null, "Salvo!");
+    }//GEN-LAST:event_jBtnConfirmarActionPerformed
+
+    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
+        habilitar(false);
+    }//GEN-LAST:event_jBtnCancelarActionPerformed
+
+    private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
+        String resp = JOptionPane.showInputDialog(null, "Entre com o Código de Usuário");
+        if (resp == null ){
+            JOptionPane.showMessageDialog(null, "codigo em branco");
+        } else {
+            ClienteDao clienteDAO = new ClienteDao();
+            int cod = Integer.valueOf(resp);
+            VSC_cliente cliente = (VSC_cliente) clienteDAO.list(cod);
+
+            resp = String.valueOf(cliente.getVSC_id_cliente());
+            jTxtCodigo.setText(resp);
+            jTxtNome.setText(cliente.getVSC_nome());
+            jTxtSobrenome.setText(cliente.getVSC_sobrenome());
+            jTxtEndereco.setText(cliente.getVSC_endereco());
+            jTxtEmail.setText(cliente.getVSC_enderecoEmail());
+            jTxtTelefone.setText(cliente.getVSC_numTelefone());
+            // jFmtDataNascimento.setText(clientes.getVSC_dataNasc());
+            jTxtGenero.setText(cliente.getVSC_genero());
+            jFmtRg.setText(cliente.getVSC_Rg());
+            if (cliente.getVSC_generosFavoritos().equals("Shonen") == true) {
+                jChbShonen.setSelected(true);
+            } else {
+                jChbShonen.setSelected(false);
+            }
+            if (cliente.getVSC_generosFavoritos().equals("Kodomo") == true) {
+                jChbKodomo.setSelected(true);
+            } else {
+                jChbKodomo.setSelected(false);
+            }
+
+            if (cliente.getVSC_generosFavoritos().equals("Shojo") == true) {
+                jChbShojo.setSelected(true);
+            } else {
+                jChbShojo.setSelected(false);
+            }
+            if (cliente.getVSC_generosFavoritos().equals("Ecchi") == true) {
+                jChbEcchi.setSelected(true);
+            } else {
+                jChbEcchi.setSelected(false);
+            }
+            if (cliente.getVSC_generosFavoritos().equals("Josei") == true) {
+                jChbJosei.setSelected(true);
+            } else {
+                jChbJosei.setSelected(false);
+            }
+            if (cliente.getVSC_generosFavoritos().equals("Seinen") == true) {
+                jChbSeinen.setSelected(true);
+            } else {
+                jChbSeinen.setSelected(false);
+            }
+            if (cliente.getVSC_preferencia_de_comunicacao().equals("Email") == true) {
+                jChbEmail.setSelected(true);
+            } else {
+                jChbEmail.setSelected(false);
+            }
+            if (cliente.getVSC_preferencia_de_comunicacao().equals("Telefone") == true) {
+                jChbEmail.setSelected(true);
+            } else {
+                jChbEmail.setSelected(false);
+            }
+
+        }
+    }//GEN-LAST:event_jBtnPesquisarActionPerformed
+
+    private void jTxtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtCodigoActionPerformed
+
+    private void jTxtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtNomeActionPerformed
+
+    private void jTxtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxtEmailActionPerformed
+
+    private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
+        habilitar(true);
+        jTxtCodigo.grabFocus();
+        limpar();
+
+    }//GEN-LAST:event_jBtnIncluirActionPerformed
+
+    private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
+        JOptionPane.showMessageDialog(null, "Alterado com sucesso...");
+    }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -86,5 +562,39 @@ public class JDlgCliente extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnAlterar;
+    private javax.swing.JButton jBtnCancelar;
+    private javax.swing.JButton jBtnConfirmar;
+    private javax.swing.JButton jBtnExcluir;
+    private javax.swing.JButton jBtnIncluir;
+    private javax.swing.JButton jBtnPesquisar;
+    private javax.swing.JCheckBox jChbEcchi;
+    private javax.swing.JCheckBox jChbEmail;
+    private javax.swing.JCheckBox jChbJosei;
+    private javax.swing.JCheckBox jChbKodomo;
+    private javax.swing.JCheckBox jChbSeinen;
+    private javax.swing.JCheckBox jChbShojo;
+    private javax.swing.JCheckBox jChbShonen;
+    private javax.swing.JCheckBox jChbTelefone;
+    private javax.swing.JFormattedTextField jFmtDataNascimento;
+    private javax.swing.JFormattedTextField jFmtRg;
+    private javax.swing.JLabel jLblCodigo;
+    private javax.swing.JLabel jLblDataNasc;
+    private javax.swing.JLabel jLblEmail;
+    private javax.swing.JLabel jLblEndereco;
+    private javax.swing.JLabel jLblGenero;
+    private javax.swing.JLabel jLblGeneroFavoritos;
+    private javax.swing.JLabel jLblNome;
+    private javax.swing.JLabel jLblPrefComunicacao;
+    private javax.swing.JLabel jLblRg;
+    private javax.swing.JLabel jLblSobrenome;
+    private javax.swing.JLabel jLblTelefone;
+    private javax.swing.JTextField jTxtCodigo;
+    private javax.swing.JTextField jTxtEmail;
+    private javax.swing.JTextField jTxtEndereco;
+    private javax.swing.JTextField jTxtGenero;
+    private javax.swing.JTextField jTxtNome;
+    private javax.swing.JTextField jTxtSobrenome;
+    private javax.swing.JTextField jTxtTelefone;
     // End of variables declaration//GEN-END:variables
 }
