@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://10.7.0.51:33062/db_vinicius_carvalho?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">vinicius_carvalho</property>
+    <property name="hibernate.connection.password">vinicius_carvalho</property>
+    <mapping class="bean.FmjDestaque"/>
+    <mapping class="bean.VscUsuario"/>
+    <mapping class="bean.FmjCompraProduto"/>
+    <mapping class="bean.VscVenda"/>
+    <mapping class="bean.FmjCompra"/>
+    <mapping class="bean.FmjProduto"/>
+    <mapping class="bean.FmjFornecedor"/>
+    <mapping class="bean.FmjFuncionarios"/>
+    <mapping class="bean.VscCliente"/>
+    <mapping class="bean.VscVendaProduto"/>
+  </session-factory>
+</hibernate-configuration>
